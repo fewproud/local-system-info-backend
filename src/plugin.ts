@@ -33,6 +33,10 @@ export const localSystemInfoPlugin = createBackendPlugin({
           path: '/health',
           allow: 'unauthenticated',
         });
+        httpRouter.addAuthPolicy({
+          path: '/system-info',
+          allow: 'unauthenticated',
+        });
       },
     });
   },
