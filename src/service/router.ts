@@ -38,6 +38,7 @@ export async function createRouter(
     };
 
     res.send(systemInfo);
+  });
 
   const middleware = MiddlewareFactory.create({ logger, config });
 
