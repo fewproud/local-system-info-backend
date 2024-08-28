@@ -3,6 +3,7 @@ import { LoggerService } from '@backstage/backend-plugin-api';
 import { Config } from '@backstage/config';
 import express from 'express';
 import Router from 'express-promise-router';
+import os from 'os';
 
 export interface RouterOptions {
   logger: LoggerService;
@@ -17,12 +18,12 @@ export async function createRouter(
   const router = Router();
   router.use(express.json());
 
-/*
+
   router.get('/health', (_, response) => {
     logger.info('PONG!');
     response.json({ status: 'ok' });
   });
-*/
+
 
   router.get('/system-info', (req, res) => {
     const systemInfo = {
